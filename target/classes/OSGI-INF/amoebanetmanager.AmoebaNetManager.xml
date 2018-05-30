@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="amoebanetmanager.AmoebaNetManager" activate="activate" deactivate="deactivate">
+    <implementation class="amoebanetmanager.AmoebaNetManager"/>
+    <property name="service.pid" value="amoebanetmanager.AmoebaNetManager"/>
+    <reference name="coreService" interface="org.onosproject.core.CoreService" cardinality="1..1" policy="static" bind="bindCoreService" unbind="unbindCoreService"/>
+    <reference name="topologyService" interface="org.onosproject.net.topology.TopologyService" cardinality="1..1" policy="static" bind="bindTopologyService" unbind="unbindTopologyService"/>
+    <reference name="rmqService" interface="rmqservice.api.RmqService" cardinality="1..1" policy="static" bind="bindRmqService" unbind="unbindRmqService"/>
+    <reference name="eventsService" interface="eventester.EventsService" cardinality="1..1" policy="static" bind="bindEventsService" unbind="unbindEventsService"/>
+    <reference name="getpath" interface="pathmanagerservice.api.BdePathService" cardinality="1..1" policy="static" bind="bindGetpath" unbind="unbindGetpath"/>
+    <reference name="initConfigService" interface="initialconfigservice.InitConfigService" cardinality="1..1" policy="static" bind="bindInitConfigService" unbind="unbindInitConfigService"/>
+    <reference name="costService" interface="costservice.CostService" cardinality="1..1" policy="static" bind="bindCostService" unbind="unbindCostService"/>
+    <reference name="configService" interface="org.onosproject.net.config.NetworkConfigService" cardinality="1..1" policy="static" bind="bindConfigService" unbind="unbindConfigService"/>
+    <reference name="agentFlowService" interface="flowmanagerservice.api.AgentFlowService" cardinality="1..1" policy="static" bind="bindAgentFlowService" unbind="unbindAgentFlowService"/>
+    <reference name="jsonExceptionService" interface="exceptionservice.api.JsonExceptionService" cardinality="1..1" policy="static" bind="bindJsonExceptionService" unbind="unbindJsonExceptionService"/>
+    <reference name="deviceService" interface="org.onosproject.net.device.DeviceService" cardinality="1..1" policy="static" bind="bindDeviceService" unbind="unbindDeviceService"/>
+    <reference name="meterService" interface="org.onosproject.net.meter.MeterService" cardinality="1..1" policy="static" bind="bindMeterService" unbind="unbindMeterService"/>
+</scr:component>

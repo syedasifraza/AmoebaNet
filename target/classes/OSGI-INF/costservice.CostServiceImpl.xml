@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="costservice.CostServiceImpl" activate="activate" deactivate="deactivate">
+    <implementation class="costservice.CostServiceImpl"/>
+    <service servicefactory="false">
+        <provide interface="costservice.CostService"/>
+    </service>
+    <property name="service.pid" value="costservice.CostServiceImpl"/>
+    <reference name="topologyService" interface="org.onosproject.net.topology.TopologyService" cardinality="1..1" policy="static" bind="bindTopologyService" unbind="unbindTopologyService"/>
+    <reference name="deviceService" interface="org.onosproject.net.device.DeviceService" cardinality="1..1" policy="static" bind="bindDeviceService" unbind="unbindDeviceService"/>
+    <reference name="hostService" interface="org.onosproject.net.host.HostService" cardinality="1..1" policy="static" bind="bindHostService" unbind="unbindHostService"/>
+    <reference name="initConfigService" interface="initialconfigservice.InitConfigService" cardinality="1..1" policy="static" bind="bindInitConfigService" unbind="unbindInitConfigService"/>
+</scr:component>

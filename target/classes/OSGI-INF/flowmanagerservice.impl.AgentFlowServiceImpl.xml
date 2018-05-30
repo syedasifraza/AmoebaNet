@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="flowmanagerservice.impl.AgentFlowServiceImpl" activate="activate" deactivate="deactivate">
+    <implementation class="flowmanagerservice.impl.AgentFlowServiceImpl"/>
+    <service servicefactory="false">
+        <provide interface="flowmanagerservice.api.AgentFlowService"/>
+    </service>
+    <property name="service.pid" value="flowmanagerservice.impl.AgentFlowServiceImpl"/>
+    <reference name="flowRuleService" interface="org.onosproject.net.flow.FlowRuleService" cardinality="1..1" policy="static" bind="bindFlowRuleService" unbind="unbindFlowRuleService"/>
+    <reference name="initConfigService" interface="initialconfigservice.InitConfigService" cardinality="1..1" policy="static" bind="bindInitConfigService" unbind="unbindInitConfigService"/>
+    <reference name="meterService" interface="org.onosproject.net.meter.MeterService" cardinality="1..1" policy="static" bind="bindMeterService" unbind="unbindMeterService"/>
+</scr:component>
